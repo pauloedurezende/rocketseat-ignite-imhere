@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
   form: {
     flexDirection: 'row',
     marginTop: 34,
+    marginBottom: 42,
   },
   input: {
     backgroundColor: '#1f1e25',
@@ -41,5 +42,10 @@ export const styles = StyleSheet.create({
   buttonText: {
     color: '#fff',
     fontSize: 24,
+  },
+  listEmptyText: {
+    color: '#fdfcfe',
+    fontSize: 14,
+    textAlign: 'center',
   },
 });
