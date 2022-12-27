@@ -19,6 +19,8 @@ export default function Home() {
   const [participants, setParticipants] = useState<string[]>([]);
 
   function handleParticipantAdd() {
+    if (participantName.length === 0) return;
+
     const participantAlreadyAdded = participants.includes(participantName);
 
     if (participantAlreadyAdded) {
