@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
-import { ptBR } from 'date-fns/locale';
+import { enUS } from 'date-fns/locale';
 
-export function formatLocalizedDate(date = new Date(), locale = ptBR) {
+export function formatLocalizedDate(date = new Date(), locale = enUS) {
   return format(date, 'PPPP', { locale });
 }
