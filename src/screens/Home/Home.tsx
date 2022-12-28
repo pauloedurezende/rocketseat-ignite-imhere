@@ -25,8 +25,8 @@ export default function Home() {
 
     if (participantAlreadyAdded) {
       return Alert.alert(
-        'Participante existe',
-        'Já existe um participante na lista com este nome'
+        'Already exists',
+        'There is already a participant in the list with the name that was entered'
       );
     }
 
@@ -35,29 +35,33 @@ export default function Home() {
   }
 
   function handleParticipantRemove(name: string) {
-    return Alert.alert('Remover', `Deseja remover o participante ${name}?`, [
-      {
-        text: 'Sim',
-        onPress: () =>
-          setParticipants((prevState) =>
-            prevState.filter((participant) => participant !== name)
-          ),
-      },
-      {
-        text: 'Não',
-        style: 'cancel',
-      },
-    ]);
+    return Alert.alert(
+      'Remove',
+      `Do you want to remove the participant ${name}?`,
+      [
+        {
+          text: 'Yes',
+          onPress: () =>
+            setParticipants((prevState) =>
+              prevState.filter((participant) => participant !== name)
+            ),
+        },
+        {
+          text: 'No',
+          style: 'cancel',
+        },
+      ]
+    );
   }
 
   return (
     <View style={styles.container}>
-      <Text style={styles.eventTitle}>Lista de Participantes</Text>
+      <Text style={styles.eventTitle}>List of Participants</Text>
       <Text style={styles.eventDate}>{date}</Text>
 
       <View style={styles.form}>
         <TextInput
-          placeholder="Nome do participante"
+          placeholder="Participant name"
           placeholderTextColor="#6b6b6b"
           value={participantName}
           onChangeText={setParticipantName}
@@ -82,8 +86,8 @@ export default function Home() {
         )}
         ListEmptyComponent={() => (
           <Text style={styles.listEmptyText}>
-            Ninguém chegou ao evento ainda? Adicione participantes a sua lista
-            de presença.
+            No one has arrived at the event yet? Add participants to your
+            attendance list.
           </Text>
         )}
       />
