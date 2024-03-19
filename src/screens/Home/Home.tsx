@@ -24,10 +24,12 @@ export default function Home() {
     const participantAlreadyAdded = participants.includes(participantName);
 
     if (participantAlreadyAdded) {
-      return Alert.alert(
+      Alert.alert(
         'Already exists',
         'There is already a participant in the list with the name that was entered'
       );
+
+      return;
     }
 
     setParticipants((prevState) => [...prevState, participantName]);
